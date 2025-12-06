@@ -1,6 +1,6 @@
 def add(a, b):
     return a + b
 
-if _name_ == _main_":
+if __name__ == __main__":
    print("Hello from python")
    print("5 + 3 =", add(5, 3))
