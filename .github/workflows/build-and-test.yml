@@ -1,4 +1,4 @@
-name: build-and-test  # Workflow ka naam (branch protection se match hona chahiye)
+name: build-and-test
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   test:
-    runs-on: windows-latest  # Windows runner use kar rahe hain
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
@@ -22,6 +22,7 @@ jobs:
           python-version: 3.11
 
       - name: Install dependencies
+        shell: powershell
         run: |
           python -m pip install --upgrade pip
           pip install pytest
