@@ -1,14 +1,16 @@
-name: build-and-test
+name: build-and-test  # Ye naam wahi hona chahiye jo aapne branch protection mein likha hai
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   pull_request:
-    branches: ["main"]
+    branches: 
+      - main
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Ye Windows environment pe chalega
 
     steps:
     - name: Checkout code
@@ -17,7 +19,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.11"
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
